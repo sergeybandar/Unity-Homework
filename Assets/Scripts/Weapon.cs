@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,26 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform _bulletsSpawnPoint;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private int _capacityMagazine;
-    [SerializeField] private float _force;
-    [SerializeField] private float _shotDelay;
+
+    private float _force;
+    private float _shotDelay;
 
     private Transform _bulletRoot;
     private Bullet[] _bullets;
     private float _timeDalay=0;
 
+    public float Force { get => _force; private set => _force = value; }
+    public float ShotDelay { get => _shotDelay; private set => _shotDelay = value; }
+
     private void Start()
     {
+        if(WeaponDataManager.Instance.TryGetWeaponDataByWeaponName(this, out WeaponData weaponDate)){
+            Force = weaponDate.Force;
+            ShotDelay = weaponDate.ShotDelay;
+        }
         _bulletRoot = new GameObject("BulletRoot").transform;
         Recharge();
+        
         
     }
     private void Update()
@@ -26,11 +36,11 @@ public class Weapon : MonoBehaviour
     }
     public virtual void Fire()
     {
-        if (_timeDalay > _shotDelay)
+        if (_timeDalay > ShotDelay)
         {
             if(TryGetBullet(out Bullet bullet))
             {
-                bullet.Run(_bulletsSpawnPoint.forward * _force, _bulletsSpawnPoint.position, transform.rotation);
+                bullet.Run(_bulletsSpawnPoint.forward * Force, _bulletsSpawnPoint.position, transform.rotation);
             }
 
             _timeDalay = 0;
