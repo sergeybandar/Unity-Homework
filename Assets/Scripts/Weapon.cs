@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform _bulletsSpawnPoint;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private int _capacityMagazine;
-
+    [SerializeField] private WeaponDataManager _weaponDataManager;
     private float _force;
     private float _shotDelay;
 
@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        if(WeaponDataManager.Instance.TryGetWeaponDataByWeaponName(this, out WeaponData weaponDate)){
+        if(_weaponDataManager.TryGetWeaponDataByWeaponName(this, out WeaponData weaponDate)){
             Force = weaponDate.Force;
             ShotDelay = weaponDate.ShotDelay;
         }

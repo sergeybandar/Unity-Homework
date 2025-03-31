@@ -6,12 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = nameof(WeaponDataManager), menuName = "Data/Wepon/Manager")]
 public class WeaponDataManager : ScriptableObject
 {
-    public static WeaponDataManager Instance { get; private set; }
-
-    WeaponDataManager() : base() {
-        Instance = this;
-    }
-
     [Serializable]
     private sealed class WeponDataByWeaponName
     {

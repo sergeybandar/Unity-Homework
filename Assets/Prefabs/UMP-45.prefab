@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 5112e6444b23577429168ceb76476ae4, type: 3}
       propertyPath: m_Name
-      value: UMP-45 Variant
+      value: UMP-45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5112e6444b23577429168ceb76476ae4, type: 3}
       propertyPath: m_RootOrder
@@ -123,3 +123,4 @@ MonoBehaviour:
   _bulletsSpawnPoint: {fileID: 1315956936655718797}
   _bulletPrefab: {fileID: 4953590570897959209, guid: 30bc14ed2949ebc47b1f7e1cfbbf59dc, type: 3}
   _capacityMagazine: 50
+  _weaponDataManager: {fileID: 11400000, guid: a32276a58fd11ab4cbfb73e5c2a335be, type: 2}

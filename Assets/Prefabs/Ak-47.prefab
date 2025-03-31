@@ -330,5 +330,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletsSpawnPoint: {fileID: 1072758614400020465}
   _bulletPrefab: {fileID: 4953590570897959209, guid: 30bc14ed2949ebc47b1f7e1cfbbf59dc, type: 3}
-  _weaponUpgradeData: {fileID: 11400000, guid: 2c8936fcf0641ff449e9a7e363166f43, type: 2}
   _capacityMagazine: 100
+  _weaponDataManager: {fileID: 11400000, guid: a32276a58fd11ab4cbfb73e5c2a335be, type: 2}
